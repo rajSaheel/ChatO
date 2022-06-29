@@ -14,9 +14,9 @@
     
         (strlen($result) > 28) ? $msg = substr($result, 0 ,28).'...' : $msg = $result;
     
-        ($outgoing_id == $row2['outgoing_msg_id']) ? $you = "You: " : $you ="";
+        ($outgoing_id == isset($row2['outgoing_msg_id'])) ? $you = "You: " : $you ="";
 
-        ($row['status'] == "Offline now") ? $offline = "offline" : $offline = "";
+        ($row['status'] == "Offline now") ? $offline = "Offline" : $offline = "";
 
         $output .= '<a href="chat.php?user_id='.$row['unique_id'].'">
                         <div class="content">
